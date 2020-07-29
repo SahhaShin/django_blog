@@ -30,16 +30,15 @@
     </thead>
 
     <tbody>
-        <select class="custom-select custom-select-lg mb-3 mid">
-            <option selected>Django</option>
-            <option value="1">Python</option>
-            <option value="2">html/css</option>
-            <option value="3">Js/Jquery</option>
-        </select>
 
-
-   
         <form action="{%url 'storage'%}" method="GET">
+            <select name="seltype" class="custom-select custom-select-lg mb-3 mid" >
+                <option value="Django" selected>Django</option>
+                <option value="Python">Python</option>
+                <option value="html/css">html/css</option>
+                <option value="Js/Jquery">Js/Jquery</option>
+            </select>
+
             <input type="text" name="subject01" class="text_size" style="height: 50px;">
             <br><br>
 

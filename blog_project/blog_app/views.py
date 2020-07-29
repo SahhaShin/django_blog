@@ -20,9 +20,13 @@ def create(request):
 #게시글작성 후 저장 -> 메인페이지
 def storage(request):
     post_save=Post()
+    post_save.selectType=request.GET.get('seltype','')
     post_save.subject=request.GET['subject01']
     post_save.memo=request.GET['memo01']
     post_save.created_date=timezone.datetime.now()
+
+    
+
     post_save.save()
     return redirect('../index')
 
@@ -47,6 +51,7 @@ def update(request,id):
 #세부내용의 글을 수정한다.
 def doupdate(request,id):
     content=get_object_or_404(Post,pk=id)
+    content.selectType=request.GET.get('seltype','')
     content.subject=request.GET['subject02']
     content.memo=request.GET['memo02']
     content.created_date=timezone.datetime.now()
